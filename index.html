@@ -1,9 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TweetUp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <nav>
+        <div>
+          <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Posts</a></li>
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">Analytics</a></li>
+          </ul>
+        </div>
+      </nav>
+    </main>
+  </body>
 </html>
