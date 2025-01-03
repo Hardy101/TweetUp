@@ -1,16 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-.regular {
-  font-family: "Noto Sans", serif;
-  font-optical-sizing: auto;
+.poppins-regular {
+  font-family: "Poppins", serif;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
-.bold {
-  font-family: "Noto Sans", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
+
+.poppins-bold {
+  font-family: "Poppins", serif;
+  font-weight: 700;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: italic;
 }
