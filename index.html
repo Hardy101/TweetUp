@@ -9,7 +9,9 @@
         theme: {
           extend: {
             colors: {
-              clifford: "#da373d",
+              blue: {
+                1: "#006BFF",
+              },
             },
           },
         },
@@ -26,15 +28,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Pulse</title>
   </head>
-  <body>
+  <body class="poppins-regular">
     <main>
       <nav>
-        <div>
-          <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Posts</a></li>
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">Analytics</a></li>
+        <div class="px-16 py-8">
+          <ul class="flex gap-4">
+            <li class="grow my-auto">
+              <a href="#" class="font-bold text-xl">Pulse</a>
+            </li>
+            <li class="my-auto">
+              <a href="#" class="text-sm poppins-medium">Dashboard</a>
+            </li>
+            <li class="my-auto">
+              <a href="#" class="text-sm poppins-medium">Posts</a>
+            </li>
+            <li class="my-auto">
+              <a href="#" class="text-sm poppins-medium">Inbox</a>
+            </li>
+            <li class="my-auto">
+              <a href="#" class="text-sm poppins-medium">Analytics</a>
+            </li>
+            <li class="my-auto">
+              <button class="bg-blue-1 text-white px-2 py-1 rounded-md">
+                New Post
+              </button>
+            </li>
           </ul>
         </div>
       </nav>
