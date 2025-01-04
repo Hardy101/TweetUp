@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="src/js/tailwind.config.js"></script>
+   <script src="src/js/tailwind.config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Pulse</title>
@@ -22,13 +22,13 @@
         <div class="px-16 py-4">
           <ul class="flex gap-4">
             <li class="grow my-auto">
-              <a href="#" class="poppins-bold text-xl">Pulse</a>
+              <a href="#" class="poppins-bold text-xl">Schedule</a>
             </li>
             <li class="my-auto">
-              <a href="#" class="text-xs poppins-bold">Schedule</a>
+              <a href="index.html" class="text-xs poppins-medium">Dashboard</a>
             </li>
             <li class="my-auto">
-              <a href="posts.html" class="text-xs poppins-medium">Posts</a>
+              <a href="#" class="text-xs poppins-bold">Posts</a>
             </li>
             <li class="my-auto">
               <a href="#" class="text-xs poppins-medium">Messages</a>
@@ -47,20 +47,48 @@
 
       <section>
         <div class="py-10 px-32">
-          <div class="header poppins-bold">
-            <h1 class="text-2xl font-bold">Schedule Posts</h1>
-            <div>
-              <span class="text-gray-bold text-xs poppins-regular mt-4"
-                >Queue</span
-              >
-              <span class="text-gray-bold text-xs poppins-regular mt-4"
-                >Calender</span
-              >
-            </div>
+          <div class="post-header grid grid-cols-3 poppins-bold">
+            <h1 class="text-2xl font-bold col-span-2">Posts</h1>
+            <button
+              class="text-xs bg-blue-1 text-white px-4 py-2 rounded-md ml-auto"
+            >
+              Create
+            </button>
+            <span class="text-gray-faded text-xs poppins-regular mt-4"
+              >179 posts</span
+            >
           </div>
 
           <!-- Posts -->
-          <div class="posts-body mt-16"></div>
+          <div class="posts-body mt-16 border rounded-md">
+            <div class="posts-header text-xs">
+              <ul
+                class="grid grid-cols-8 px-4 py-5 poppins-medium border-b text-left"
+              >
+                <li>Post</li>
+                <li>Likes</li>
+                <li>Retweets</li>
+                <li>Views</li>
+                <li>Likes</li>
+                <li>Engagement</li>
+                <li>Engagement Rate</li>
+                <li>Date</li>
+              </ul>
+
+              <ul
+                class="grid grid-cols-8 px-4 py-5 poppins-medium text-gray-bold text-left"
+              >
+                <li>Here is my tweet</li>
+                <li>1270</li>
+                <li>50</li>
+                <li>5000</li>
+                <li>489</li>
+                <li>1,480</li>
+                <li>23.4%</li>
+                <li>12/01/2024</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
