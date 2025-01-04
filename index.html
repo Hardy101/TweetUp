@@ -19,6 +19,7 @@
               blue: {
                 1: "#006BFF",
               },
+              faded: "#A6AEBF"
             },
           },
         },
@@ -61,10 +62,13 @@
       </nav>
 
       <section>
-        <div class="py-10 px-8">
-          <div class="header flex justify-between">
-            <h1 class="text-2xl poppins-bold">Tweets</h1>
-            <button>Create</button>
+        <div class="py-10 px-32">
+          <div class="post-header grid grid-cols-3 poppins-bold">
+            <h1 class="text-2xl font-bold col-span-2">Tweets</h1>
+            <button class="text-xs bg-blue-1 text-white px-4 py-2 rounded-md ml-auto">
+              Create
+            </button>
+            <span class="text-faded text-xs poppins-regular mt-4">179 posts</span>
           </div>
         </div>
       </section>
