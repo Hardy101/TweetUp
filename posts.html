@@ -19,10 +19,10 @@
   <body>
     <main>
       <nav class="border-b">
-        <div class="px-16 py-4">
+        <div class="px-8 md:px-16 py-4">
           <ul class="flex justify-between gap-4 md:hidden">
             <li class="grow my-auto">
-              <a href="#" class="poppins-bold text-xl">Pulse</a>
+              <a href="index.html" class="poppins-bold text-xl">Pulse</a>
             </li>
             <button>
               <img
@@ -71,7 +71,7 @@
       </nav>
 
       <section>
-        <div class="py-10 px-32">
+        <div class="py-10 px-8 md:px-32">
           <div class="post-header grid grid-cols-3 poppins-bold">
             <h1 class="text-2xl font-bold col-span-2">Posts</h1>
             <button
@@ -86,31 +86,54 @@
 
           <!-- Posts -->
           <div class="posts-body mt-8 border rounded-md">
-            <div class="posts-header text-xs">
+            <div class="text-xs">
               <ul
-                class="grid grid-cols-8 px-4 py-5 poppins-medium border-b text-left"
+                class="posts-header grid grid-cols-2 md:grid-cols-9 px-4 py-5 poppins-medium border-b text-left overflow-hidden"
               >
-                <li>Post</li>
-                <li>Likes</li>
-                <li>Retweets</li>
-                <li>Views</li>
-                <li>Likes</li>
-                <li>Engagement</li>
-                <li>Engagement Rate</li>
-                <li>Date</li>
+                <li class="">Post</li>
+                <li class="hidden">Likes</li>
+                <li class="hidden">Retweets</li>
+                <li class="hidden">Views</li>
+                <li class="hidden">Likes</li>
+                <li class="hidden">Engagement</li>
+                <li class="hidden">Engagement Rate</li>
+                <li class="text-right md:text-left">Origin</li>
+                <li class="hidden">Date</li>
               </ul>
 
               <ul
-                class="grid grid-cols-8 px-4 py-5 poppins-medium text-gray-bold text-left"
+                class="poppins-medium text-gray-bold text-left overflow-hidden"
               >
-                <li>Here is my tweet</li>
-                <li>1270</li>
-                <li>50</li>
-                <li>5000</li>
-                <li>489</li>
-                <li>1,480</li>
-                <li>23.4%</li>
-                <li>12/01/2024</li>
+                <li class="grid grid-cols-2 md:grid-cols-9 px-4 py-5 hover:bg-gray-faded">
+                  <span
+                    >Here is my post, i know that some of you have your
+                    own</span
+                  >
+                  <span class="hidden md:block">1270</span>
+                  <span class="hidden md:block">50</span>
+                  <span class="hidden md:block">5000</span>
+                  <span class="hidden md:block">489</span>
+                  <span class="hidden md:block">1,480</span>
+                  <span class="hidden md:block">23.4%</span>
+                  <span class="poppins-bold text-right md:text-left">Pulse</span>
+                  <span class="hidden md:block">12/01/2024</span>
+                </li>
+                <li class="grid grid-cols-2 md:grid-cols-9 px-4 py-5 hover:bg-gray-faded">
+                  <span
+                    >Here is my post, i know that some of you have your
+                    own</span
+                  >
+                  <span class="hidden md:block">1270</span>
+                  <span class="hidden md:block">50</span>
+                  <span class="hidden md:block">5000</span>
+                  <span class="hidden md:block">489</span>
+                  <span class="hidden md:block">1,480</span>
+                  <span class="hidden md:block">23.4%</span>
+                  <span class="poppins-bold"
+                    ><img src="src/img/x.png" class="w-4 ml-auto md:m-0" alt=""
+                  /></span>
+                  <span class="hidden md:block">12/01/2024</span>
+                </li>
               </ul>
             </div>
           </div>
