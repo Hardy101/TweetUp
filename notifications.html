@@ -18,8 +18,55 @@
   </head>
   <body>
     <main>
+      <!-- Dropdown for sm devices -->
+      <div
+        id="dropdown"
+        class="hidden dropdown w-full absolute top-16 z-10 animate__animated animate__fadeIn"
+      >
+        <ul class="bg-white bs-1 px-8 pb-2 text-sm poppins-medium">
+          <li class="flex gap-2">
+            <img src="src/img/clock.png" class="w-4 my-auto" alt="clock" />
+            <a href="index.html" class="py-2 my-auto">Schedule</a>
+          </li>
+          <li class="flex gap-2">
+            <img src="src/img/post.png" class="w-4 my-auto" alt="" />
+            <a href="posts.html" class="py-2">Posts</a>
+          </li>
+          <li class="flex gap-2">
+            <img src="src/img/message.png" class="w-4 my-auto" alt="message" />
+            <a href="messages.html" class="py-2">Messages</a>
+          </li>
+          <li class="flex gap-2">
+            <img
+              src="src/img/analytics.png"
+              class="w-4 my-auto"
+              alt="analytics"
+            />
+            <a href="analytics.html" class="py-2">Analytics</a>
+          </li>
+          <li class="flex gap-2">
+            <img
+              src="src/img/notification.png"
+              class="w-4 my-auto"
+              alt="notifications"
+            />
+            <a href="notifications.html" class="py-2">Notifications</a>
+          </li>
+          <hr class="h-0.5 bg-gray-faded" />
+          <li class="flex mt-2">
+            <a
+              href="index.html#createpost"
+              class="flex gap-2 rounded-sm w-full bg-blue-1 rounded p-2"
+            >
+              <img src="src/img/plus.png" class="w-4 invert" alt="plus" />
+              <span class="text-white">New Post</span>
+            </a>
+          </li>
+        </ul>
+      </div>
       <nav class="border-b">
         <div class="px-8 md:px-16 py-4">
+          <!-- Navigation for sm devices -->
           <ul class="flex justify-between gap-4 md:hidden">
             <li class="grow my-auto flex">
               <a href="index.html" class="mr-auto poppins-medium"
@@ -34,6 +81,7 @@
               />
             </button>
           </ul>
+          <!-- Navigation for lg devices -->
           <ul class="hidden md:flex gap-4">
             <li class="grow my-auto flex">
               <a href="index.html" class="mr-auto poppins-medium"
@@ -52,7 +100,9 @@
               >
             </li>
             <li class="my-auto">
-              <a href="analytics.html" class="text-xs poppins-medium">Analytics</a>
+              <a href="analytics.html" class="text-xs poppins-medium"
+                >Analytics</a
+              >
             </li>
             <li class="my-auto">
               <a href="notifications.html" class="text-xs poppins-bold"
