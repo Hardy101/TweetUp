@@ -14,6 +14,11 @@
     <script src="src/js/tailwind.config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Pulse</title>
   </head>
   <body>
@@ -73,12 +78,8 @@
                 ><img src="src/img/logo.png" class="w-8"
               /></a>
             </li>
-            <button>
-              <img
-                src="src/img/menu.png"
-                class="w-8 md:hidden"
-                alt="menu icon"
-              />
+            <button id="dropdownbtn">
+              <img src="src/img/menu.png" class="w-8 my-auto" alt="menu icon" />
             </button>
           </ul>
           <!-- Navigation for lg devices -->
@@ -178,5 +179,6 @@
 
       <!-- Create post overlay -->
     </main>
+    <script src="src/js/script.js"></script>
   </body>
 </html>
