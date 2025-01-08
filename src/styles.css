@@ -1,7 +1,11 @@
 @layer utilities {
-  .content-auto {
-    content-visibility: auto;
+  * {
+    transition: 0.3s;
   }
+  html {
+    scroll-behavior: smooth;
+  }
+
   .poppins-thin {
     font-family: "Poppins", serif;
     font-weight: 100;
