@@ -9,6 +9,7 @@ const El = {
   messageContent: document.querySelectorAll(".message-content"),
   editMsgBtn: document.querySelectorAll(".edit-message-btn"),
   textarea: document.querySelectorAll("textarea"),
+  copyMsg: document.querySelectorAll(".copymsg"),
 };
 
 // Component functions
@@ -70,6 +71,31 @@ const initializeEventListeners = () => {
     textarea.addEventListener("input", () => {
       textarea.style.height = "auto"; // Reset height to recalculate
       textarea.style.height = `${textarea.scrollHeight}px`; // Set height to content height
+    });
+  });
+
+  // Copy message to clipboard
+  El.copyMsg.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const parentDiv = btn.parentElement;
+      const span = btn.querySelector("span");
+      if (span.textContent === "copy") {
+        span.textContent = "copied";
+        span.classList.toggle("bg-green");
+        span.classList.toggle("bg-gray-bold");
+        setTimeout(() => {
+          span.textContent = "copy";
+          span.classList.toggle("bg-green");
+          span.classList.toggle("bg-gray-bold");
+        }, 3000); // Change back after 3 seconds
+      } else {
+        span.textContent = "copy";
+        span.classList.toggle("bg-green");
+        span.classList.toggle("bg-gray-bold");
+      }
+
+      const textarea = parentDiv.querySelector("textarea");
+      navigator.clipboard.writeText(textarea.value);
     });
   });
 };
