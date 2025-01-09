@@ -189,7 +189,7 @@
 
             <div id="createpost" class="create-post mt-10">
               <form action="#">
-                <div class="flex flex-col">
+                <div class="flex flex-col gap-3">
                   <label for="post" class="text-md poppins-bold"
                     >Write your post
                     <span class="text-xs poppins-regular text-gray-faded"
@@ -200,9 +200,39 @@
                     name="post"
                     id="post"
                     placeholder="What's happening?"
-                    class="text-sm md:w-1/2 placeholder:text-gray-bold poppins-bold bg-[#EEEDEB] mt-3 p-3 rounded-md outline-none"
+                    class="text-sm placeholder:text-gray-bold poppins-bold bg-[#EEEDEB] p-3 rounded-md outline-none"
                   ></textarea>
                 </div>
+
+                <div class="mt-4 flex flex-col gap-3">
+                  <label
+                    for="fileupload"
+                    class="flex flex-col border-2 border-dashed border-blue-1 p-2 text-center"
+                  >
+                    <input
+                      id="fileupload"
+                      type="file"
+                      name="fileupload"
+                      class="h-0 w-0"
+                      multiple
+                    />
+                    <img
+                      src="src/img/upload.png"
+                      class="w-14 mx-auto"
+                      alt="upload image"
+                    />
+                    <span class="poppins-medium mt-3"
+                      >Click to upload or drag and drop media file(s)</span
+                    >
+                    <span class="text-xs text-gray-bold poppins-medium"
+                      >Max files (5)</span
+                    >
+                  </label>
+                  <div class="files">
+                    <ul id="fileList" class="grid grid-cols-2"></ul>
+                  </div>
+                </div>
+
                 <div class="flex gap-3 text-sm mt-4">
                   <input
                     type="checkbox"
@@ -213,73 +243,75 @@
                   <label for="schedule" class="my-auto">Schedule</label>
                 </div>
 
-                <div class="mt-4 md:w-1/2">
+                <div class="mt-4">
                   <span class="text-md poppins-bold">Set date and time </span>
                   <input type="date" hidden name="date" id="date" />
-                  <label
-                    for="date"
-                    class="flex border rounded-sm px-3 py-1 mt-3"
-                  >
-                    <span
-                      class="grow my-auto text-xs poppins-bold text-gray-bold"
-                      >Date</span
+                  <div class="grid gap-x-4 grid-cols-2">
+                    <label
+                      for="date"
+                      class="flex border rounded-sm px-3 py-1 mt-3"
                     >
-                    <img
-                      src="src/img/calendar.png"
-                      class="w-6 my-auto"
-                      alt="date image"
-                    />
-                  </label>
-                  <label
-                    for="date"
-                    class="flex border rounded-sm px-3 py-1 mt-3"
-                  >
-                    <span
-                      class="grow my-auto text-xs poppins-bold text-gray-bold"
-                      >Time</span
+                      <span
+                        class="grow my-auto text-xs poppins-bold text-gray-bold"
+                        >Date</span
+                      >
+                      <img
+                        src="src/img/calendar.png"
+                        class="w-6 my-auto"
+                        alt="date image"
+                      />
+                    </label>
+                    <label
+                      for="date"
+                      class="flex border rounded-sm px-3 py-1 mt-3"
                     >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      class="w-5 my-auto"
-                      viewBox="0 0 50 50"
+                      <span
+                        class="grow my-auto text-xs poppins-bold text-gray-bold"
+                        >Time</span
+                      >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        class="w-5 my-auto"
+                        viewBox="0 0 50 50"
+                      >
+                        <path
+                          d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 37.039062 10.990234 A 1.0001 1.0001 0 0 0 36.265625 11.322266 L 26.183594 22.244141 A 3 3 0 0 0 25 22 A 3 3 0 0 0 22 25 A 3 3 0 0 0 25 28 A 3 3 0 0 0 25.5 27.958984 L 29.125 34.486328 A 1.0010694 1.0010694 0 1 0 30.875 33.513672 L 27.246094 26.984375 A 3 3 0 0 0 28 25 A 3 3 0 0 0 27.652344 23.599609 L 37.734375 12.677734 A 1.0001 1.0001 0 0 0 37.039062 10.990234 z"
+                        ></path>
+                      </svg>
+                    </label>
+                    <label
+                      for="date"
+                      class="flex gap-4 border rounded-sm px-3 py-1 mt-3"
                     >
-                      <path
-                        d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 37.039062 10.990234 A 1.0001 1.0001 0 0 0 36.265625 11.322266 L 26.183594 22.244141 A 3 3 0 0 0 25 22 A 3 3 0 0 0 22 25 A 3 3 0 0 0 25 28 A 3 3 0 0 0 25.5 27.958984 L 29.125 34.486328 A 1.0010694 1.0010694 0 1 0 30.875 33.513672 L 27.246094 26.984375 A 3 3 0 0 0 28 25 A 3 3 0 0 0 27.652344 23.599609 L 37.734375 12.677734 A 1.0001 1.0001 0 0 0 37.039062 10.990234 z"
-                      ></path>
-                    </svg>
-                  </label>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        class="w-5 my-auto row-span-2"
+                        viewBox="0 0 50 50"
+                      >
+                        <path
+                          d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 37.039062 10.990234 A 1.0001 1.0001 0 0 0 36.265625 11.322266 L 26.183594 22.244141 A 3 3 0 0 0 25 22 A 3 3 0 0 0 22 25 A 3 3 0 0 0 25 28 A 3 3 0 0 0 25.5 27.958984 L 29.125 34.486328 A 1.0010694 1.0010694 0 1 0 30.875 33.513672 L 27.246094 26.984375 A 3 3 0 0 0 28 25 A 3 3 0 0 0 27.652344 23.599609 L 37.734375 12.677734 A 1.0001 1.0001 0 0 0 37.039062 10.990234 z"
+                        ></path>
+                      </svg>
+                      <div class="flex flex-col">
+                        <span
+                          class="col-span-2 grow my-auto text-xs poppins-bold"
+                          >Frequency</span
+                        >
+                        <span
+                          class="grow my-auto text-xs poppins-medium text-gray-bold"
+                          >Post every day at 9:00</span
+                        >
+                      </div>
+                    </label>
+                  </div>
                 </div>
 
                 <!-- Frequency -->
-                <div class="mt-4 md:w-1/2">
-                  <label
-                    for="date"
-                    class="flex gap-4 border rounded-sm px-3 py-1 mt-3"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      class="w-5 my-auto row-span-2"
-                      viewBox="0 0 50 50"
-                    >
-                      <path
-                        d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 37.039062 10.990234 A 1.0001 1.0001 0 0 0 36.265625 11.322266 L 26.183594 22.244141 A 3 3 0 0 0 25 22 A 3 3 0 0 0 22 25 A 3 3 0 0 0 25 28 A 3 3 0 0 0 25.5 27.958984 L 29.125 34.486328 A 1.0010694 1.0010694 0 1 0 30.875 33.513672 L 27.246094 26.984375 A 3 3 0 0 0 28 25 A 3 3 0 0 0 27.652344 23.599609 L 37.734375 12.677734 A 1.0001 1.0001 0 0 0 37.039062 10.990234 z"
-                      ></path>
-                    </svg>
-                    <div class="flex flex-col">
-                      <span class="col-span-2 grow my-auto text-xs poppins-bold"
-                        >Frequency</span
-                      >
-                      <span
-                        class="grow my-auto text-xs poppins-medium text-gray-bold"
-                        >Post every day at 9:00</span
-                      >
-                    </div>
-                  </label>
-                </div>
+                <div class="mt-4 md:w-1/2"></div>
 
                 <!-- Action Buttons -->
                 <div class="text-xs poppins-bold mt-4 text-right">
@@ -306,5 +338,90 @@
     </main>
 
     <script src="src/js/script.js"></script>
+    <script>
+      function truncate(text, maxLength) {
+        if (text.length > maxLength) {
+          return text.slice(0, maxLength) + "...";
+        }
+        return text;
+      }
+
+      document
+        .getElementById("fileupload")
+        .addEventListener("change", handleFileUpload);
+
+      function handleFileUpload(event) {
+        const fileList = document.getElementById("fileList");
+        const files = Array.from(event.target.files);
+
+        files.forEach((file, index) => {
+          const listItem = createFileListItem(file, index, files);
+          fileList.appendChild(listItem);
+        });
+      }
+
+      function createFileListItem(file, index, files) {
+        const listItem = document.createElement("li");
+        listItem.className = "file-item flex gap-4 px-2 py-2 border-2";
+
+        const fileThumbnail = createThumbnail();
+        const fileInfo = createFileInfo(file);
+        const removeButton = createRemoveButton(listItem, index, files);
+
+        listItem.appendChild(fileThumbnail);
+        listItem.appendChild(fileInfo);
+        listItem.appendChild(removeButton);
+
+        return listItem;
+      }
+
+      function createThumbnail() {
+        const img = document.createElement("img");
+        img.src = "src/img/upload.png"; // Replace with a thumbnail generator if needed
+        img.alt = "file thumbnail";
+        img.className = "w-10 m-auto";
+        return img;
+      }
+
+      function createFileInfo(file) {
+        const fileInfo = document.createElement("div");
+        fileInfo.className = "flex grow flex-wrap gap-x-3 text-left";
+        fileInfo.innerHTML = `
+          <span class="w-full poppins-bold text-sm">${truncate(
+            file.name,
+            10
+          )}</span>
+          <span class="text-xs text-gray-bold poppins-medium">${
+            file.type
+          }</span>
+          <span class="text-xs text-gray-bold poppins-medium">${(
+            file.size /
+            (1024 * 1024)
+          ).toFixed(2)} MB</span>
+        `;
+        return fileInfo;
+      }
+
+      function createRemoveButton(listItem, index, files) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "remove-file";
+        button.innerHTML = `<img src="src/img/close.png" alt="remove" class="w-10" />`;
+
+        button.addEventListener("click", () => {
+          listItem.remove();
+          const updatedFiles = files.filter((_, i) => i !== index);
+          console.log("Remaining files:", updatedFiles);
+        });
+
+        return button;
+      }
+
+      function truncate(text, maxLength) {
+        return text.length > maxLength
+          ? text.slice(0, maxLength) + "..."
+          : text;
+      }
+    </script>
   </body>
 </html>
