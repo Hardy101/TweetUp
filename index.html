@@ -124,27 +124,36 @@
 
       <section>
         <div class="py-10 px-8 md:px-32">
-          <div class="header poppins-bold">
-            <h1 class="text-2xl font-bold">Schedule Posts</h1>
+          <div class="header">
+            <h1 id="postTypetitle" class="text-2xl font-bold">
+              Schedule Posts
+            </h1>
             <div
               class="flex gap-4 text-gray-bold text-xs poppins-medium mt-4 border-b"
             >
-              <span
-                class="cursor-pointer hover:bg-gray-faded py-3 border-b-2 border-gray-bold poppins-bold text-black"
-                >Queue</span
+              <button
+                id="queuebtn"
+                class="hover:bg-gray-faded py-3 border-b-2 border-gray-bold text-black"
               >
-              <span class="cursor-pointer hover:bg-gray-faded py-3"
-                >Calendar</span
+                Queue
+              </button>
+              <button
+                id="calendarbtn"
+                class="hover:bg-gray-faded py-3"
               >
-              <span class="cursor-pointer hover:bg-gray-faded py-3"
-                >Drafts</span
+                Calendar
+              </button>
+              <button
+                id="draftsbtn"
+                class="hover:bg-gray-faded py-3"
               >
+                Drafts
+              </button>
             </div>
           </div>
 
           <!-- Posts -->
-          <div class="posts-body mt-8">
-            <h2 class="text-xl font-bold">Next in Queue</h2>
+          <div id="queue" class="post-type hidden posts-body mt-8">
             <ul class="mt-6 flex flex-col gap-4">
               <li class="flex gap-4">
                 <span class="bg-[#f5f5f5] p-3 rounded-sm my-auto"
@@ -311,22 +320,109 @@
                 </div>
 
                 <!-- Action Buttons -->
-                <div class="text-xs poppins-bold mt-4 text-right">
+                <div
+                  class="flex jusify-between gap-3 text-xs poppins-bold mt-4 text-right"
+                >
+                  <div class="grow text-left">
+                    <button type="button" class="poppins-bold text-red-500">
+                      clear
+                    </button>
+                  </div>
                   <button
                     type="button"
                     class="bg-blue-1 text-white rounded-2xl px-4 py-1 poppins-bold"
                   >
-                    Schedule
+                    Save to drafts
                   </button>
                   <button
                     type="button"
-                    class="bg-blue-1 text-white rounded-2xl px-4 py-1 poppins-bold"
+                    class="flex gap-2 bg-blue-1 text-white rounded-2xl px-4 py-1 poppins-bold"
+                  >
+                    <img src="src/img/clock.png" class="w-4 invert" alt="" />
+                    Schedule
+                  </button>
+
+                  <button
+                    type="button"
+                    class="bg-green text-white rounded-2xl px-4 py-1 poppins-bold"
                   >
                     Create Post
                   </button>
                 </div>
               </form>
             </div>
+          </div>
+          <!-- Calendar -->
+          <div id="calendar" class="post-type posts-body mt-8">
+            <div
+              class="calendarContent flex flex-col gap-4 border-2 rounded-2xl py-4 text-center"
+            >
+              <ul
+                id="calendarheader"
+                class="grid grid-cols-7 gap-4 poppins-bold"
+              >
+                <li class="gap-4">
+                  <button class="bg-gray-faded p-3 rounded-sm">
+                    <img
+                      src="src/img/caret.png"
+                      class="w-5 rotate-180"
+                      alt=""
+                    />
+                  </button>
+                </li>
+                <li class="col-span-5 gap-4 text-center">January</li>
+                <li class="">
+                  <button class="bg-gray-faded p-3 rounded-sm">
+                    <img src="src/img/caret.png" class="w-5" alt="" />
+                  </button>
+                </li>
+              </ul>
+              <ul id="calendardays" class="grid grid-cols-7 gap-4 poppins-bold">
+                <li class="">Su</li>
+                <li class="">Mo</li>
+                <li class="">Tu</li>
+                <li class="">We</li>
+                <li class="">Th</li>
+                <li class="">Fr</li>
+                <li class="">Sa</li>
+              </ul>
+              <ul
+                id="calendardates"
+                class="grid grid-cols-7 gap-4 text-gray-bold poppins-medium text-xs"
+              >
+                <li
+                  class="active bg-[#a7bcda] text-blue-1 px-3 py-2 mx-auto rounded-sm"
+                >
+                  1
+                </li>
+                <li class="px-3 py-2">2</li>
+                <li class="px-3 py-2">3</li>
+                <li class="px-3 py-2">4</li>
+                <li class="px-3 py-2">5</li>
+                <li class="px-3 py-2">6</li>
+                <li class="px-3 py-2">7</li>
+                <li class="px-3 py-2">8</li>
+                <li class="px-3 py-2">9</li>
+                <li class="px-3 py-2">10</li>
+                <li class="px-3 py-2">11</li>
+                <li class="px-3 py-2">12</li>
+                <li class="px-3 py-2">13</li>
+                <li class="px-3 py-2">14</li>
+                <li class="px-3 py-2">15</li>
+                <li class="px-3 py-2">16</li>
+                <li class="px-3 py-2">17</li>
+                <li class="px-3 py-2">18</li>
+                <li class="px-3 py-2">19</li>
+                <li class="px-3 py-2">20</li>
+                <li class="px-3 py-2">21</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Drafts -->
+          <div id="drafts" class="post-type hidden posts-body mt-8">
+            <ul class="mt-6 flex flex-col gap-4">
+              <li class="flex gap-4"></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -337,5 +433,6 @@
     <script src="src/js/script.js"></script>
     <script src="src/js/handlefilesupload.js"></script>
     <script src="src/js/checkboxcheck.js"></script>
+    <script src="src/js/handlepoststype.js"></script>
   </body>
 </html>
