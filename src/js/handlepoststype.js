@@ -1,49 +1,63 @@
+// Elements
 const Elements = {
   title: document.getElementById("postTypetitle"),
-  queueBtn: document.getElementById("queuebtn"),
-  calendarBtn: document.getElementById("calendarbtn"),
-  draftsBtn: document.getElementById("draftsbtn"),
-  queueDiv: document.getElementById("queue"),
-  calendarDiv: document.getElementById("calendar"),
-  draftsDiv: document.getElementById("drafts"),
+  buttons: {
+    queue: document.getElementById("queuebtn"),
+    calendar: document.getElementById("calendarbtn"),
+    drafts: document.getElementById("draftsbtn"),
+  },
+  tabs: {
+    queue: document.getElementById("queue"),
+    calendar: document.getElementById("calendar"),
+    drafts: document.getElementById("drafts"),
+  },
   postTypeDivs: document.querySelectorAll(".post-type"),
   changeTabBtn: document.querySelectorAll(".changetab"),
 };
 
-// Functions
-const changeTitle = (content) => {
-  Elements.title.textContent = content;
+// Utility Functions
+const updateTextContent = (element, content) => {
+  if (element) element.textContent = content;
 };
 
-const hideAllTabs = () => {
-  Elements.postTypeDivs.forEach((div) => {
-    div.classList.add("hidden");
-  });
+const hideElements = (elements) => {
+  elements.forEach((element) => element.classList.add("hidden"));
 };
 
-const changeActiveBtn = (activeBtn) => {
-  Elements.changeTabBtn.forEach((btn) => {
-    btn.classList.remove("border-b-2", "border-gray-bold", "text-black");
-  });
-  if (activeBtn.textContent.trim() == Elements.title.textContent) {
+const updateActiveButton = (activeBtn, title) => {
+  Elements.changeTabBtn.forEach((btn) =>
+    btn.classList.remove("border-b-2", "border-gray-bold", "text-black")
+  );
+
+  if (activeBtn.textContent.trim() === title) {
     activeBtn.classList.add("border-b-2", "border-gray-bold", "text-black");
   }
 };
 
-const changeActiveTab = (title, activetab, activeBtn) => {
-  changeTitle(title);
-  hideAllTabs();
-  activetab.classList.remove("hidden");
-  changeActiveBtn(activeBtn);
+// Main Function
+const changeActiveTab = (tabName) => {
+  const { title, buttons, tabs } = Elements;
+
+  updateTextContent(title, tabName);
+  hideElements(Elements.postTypeDivs);
+  tabs[tabName.toLowerCase()].classList.remove("hidden");
+  updateActiveButton(buttons[tabName.toLowerCase()], tabName);
 };
 
 // Event Listeners
-Elements.calendarBtn.addEventListener("click", () => {
-  changeActiveTab("Calendar", Elements.calendarDiv, Elements.calendarBtn);
+Object.entries(Elements.buttons).forEach(([tabName, button]) => {
+  button.addEventListener("click", () =>
+    changeActiveTab(tabName.charAt(0).toUpperCase() + tabName.slice(1))
+  );
 });
-Elements.queueBtn.addEventListener("click", () => {
-  changeActiveTab("Queue", Elements.queueDiv, Elements.queueBtn);
-});
-Elements.draftsBtn.addEventListener("click", () => {
-  changeActiveTab("Drafts", Elements.draftsDiv, Elements.draftsBtn);
-});
+
+const getDaysInMonth = (month, year = new Date().getFullYear()) => {
+  // Adjust for 0-based month index (1-12 to 0-11)
+  return new Date(year, month, 0).getDate();
+};
+
+
+console.log(getDaysInMonth(1)); // January (31 days)
+console.log(getDaysInMonth(2, 2025)); // February (28 or 29 days depending on leap year)
+console.log(getDaysInMonth(2, 2024)); // February 2024 (29 days, leap year)
+console.log(getDaysInMonth(12)); // December (31 days)
