@@ -137,7 +137,8 @@
           </div>
           <div class="relative flex justify-between poppins-bold mt-8">
             <div
-              class="absolute right-0 top-10 bs-1 rounded-2xl text-xs poppins-regular overflow-hidden z-10"
+              id="filterdiv"
+              class="hidden absolute right-0 top-10 bs-1 rounded-2xl text-xs poppins-regular overflow-hidden z-10 animate__animated animate__fadeInUp"
             >
               <ul class="flex flex-col gap-2 pb-2">
                 <li class="py-2 px-4 bg-gray-faded poppins-bold">Filter</li>
@@ -189,7 +190,7 @@
               <button id="listbtn" class="p-2 rounded-sm">
                 <img src="src/img/list.png" class="w-5" alt="list" />
               </button>
-              <button class="p-2 rounded-sm">
+              <button id="filterbtn" class="p-2 rounded-sm">
                 <img src="src/img/filter.png" class="w-5" alt="list" />
               </button>
             </p>
@@ -317,5 +318,6 @@
       <!-- Create post overlay -->
     </main>
     <script src="src/js/script.js"></script>
+    <script src="src/js/filterposts.js"></script>
   </body>
 </html>
