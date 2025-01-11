@@ -138,13 +138,15 @@
           <div class="relative flex justify-between poppins-bold mt-8">
             <div
               id="filterdiv"
-              class="hidden absolute right-0 top-10 bs-1 rounded-2xl text-xs poppins-regular overflow-hidden z-10 animate__animated animate__fadeInUp"
+              class="hidden absolute right-0 top-10 bg-white bs-1 rounded-2xl text-xs poppins-regular overflow-hidden z-10 animate__animated animate__fadeInUp"
             >
               <ul class="flex flex-col gap-2 pb-2">
                 <li class="py-2 px-4 bg-gray-faded poppins-bold">Filter</li>
-                <li class="px-4 flex justify-between poppins-medium">
+                <li
+                  class="px-4 grid gap-2 grid-cols-2 poppins-medium text-gray-bold"
+                >
                   <span>From</span>
-                  <span>To</span>
+                  <span class="text-left">To</span>
                 </li>
                 <li class="px-4 flex gap-2 justify-between poppins-medium">
                   <input
