@@ -1,4 +1,5 @@
 const postTitles = document.querySelectorAll(".posttitle");
+const searchpost = document.querySelector("#searchpost");
 
 const createTitleArray = () => {
   let titlesArray = [];
@@ -20,15 +21,21 @@ const findAllSearchResults = (searchWord, titleArray) => {
 
 const renderResults = (results) => {
   const postList = document.getElementById("postlist"); // Get the <ul> element
-  postList.innerHTML = ''; // Clear existing list items
+  postList.innerHTML = ""; // Clear existing list items
 
   if (results.length > 0) {
-    results.forEach(result => {
+    results.forEach((result) => {
       const { index, title } = result;
-      
+
       // Create a new <li> element
       const li = document.createElement("li");
-      li.classList.add("grid", "grid-cols-7", "px-4", "py-5", "hover:bg-gray-faded");
+      li.classList.add(
+        "grid",
+        "grid-cols-7",
+        "px-4",
+        "py-5",
+        "hover:bg-gray-faded"
+      );
 
       // Add the content to the <li> (adjust these spans as needed)
       li.innerHTML = `
@@ -52,9 +59,12 @@ const renderResults = (results) => {
   }
 };
 
-let searchWord = "days";
 let postTitlesArray = createTitleArray();
-const searchResults = findAllSearchResults(searchWord, postTitlesArray);
 
 // Render the results to the HTML
-renderResults(searchResults);
+searchpost.addEventListener("input", (event) => {
+  const searchWord = event.target.value;
+  const searchResults = findAllSearchResults(searchWord, postTitlesArray);
+  console.log(searchResults);
+  renderResults(searchResults);
+});
