@@ -61,7 +61,6 @@ const renderResults = (results) => {
 
 let postTitlesArray = createTitleArray();
 
-// Render the results to the HTML
 searchpost.addEventListener("input", (event) => {
   const searchWord = event.target.value;
   const searchResults = findAllSearchResults(searchWord, postTitlesArray);

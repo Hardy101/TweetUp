@@ -55,9 +55,3 @@ const getDaysInMonth = (month, year = new Date().getFullYear()) => {
   // Adjust for 0-based month index (1-12 to 0-11)
   return new Date(year, month, 0).getDate();
 };
-
-
-console.log(getDaysInMonth(1)); // January (31 days)
-console.log(getDaysInMonth(2, 2025)); // February (28 or 29 days depending on leap year)
-console.log(getDaysInMonth(2, 2024)); // February 2024 (29 days, leap year)
-console.log(getDaysInMonth(12)); // December (31 days)

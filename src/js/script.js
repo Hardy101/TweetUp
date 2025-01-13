@@ -81,16 +81,16 @@ const initializeEventListeners = () => {
       const span = btn.querySelector("span");
       if (span.textContent === "copy") {
         span.textContent = "copied";
-        span.classList.toggle("bg-green");
+        span.classList.toggle("bg-customgreen");
         span.classList.toggle("bg-gray-bold");
         setTimeout(() => {
           span.textContent = "copy";
-          span.classList.toggle("bg-green");
+          span.classList.toggle("bg-customgreen");
           span.classList.toggle("bg-gray-bold");
         }, 3000); // Change back after 3 seconds
       } else {
         span.textContent = "copy";
-        span.classList.toggle("bg-green");
+        span.classList.toggle("bg-customgreen");
         span.classList.toggle("bg-gray-bold");
       }
 
