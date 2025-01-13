@@ -1,4 +1,7 @@
 @layer utilities {
+  .animate__animated.animate__fadeInUp {
+    --animate-duration: 0.5s;
+  }
   * {
     transition: 0.3s;
   }

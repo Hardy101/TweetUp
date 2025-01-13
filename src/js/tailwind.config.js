@@ -9,7 +9,7 @@ tailwind.config = {
           faded: "#A6AEBF",
           bold: "#727D73",
         },
-        green: "#5CB338",
+        // green: "#5CB338",
       },
     },
   },

@@ -14,12 +14,13 @@
     <script src="src/js/tailwind.config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="src/img/logo.png" />
     <!-- Animations -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <title>Pulse</title>
+    <title>XPulse</title>
   </head>
   <body>
     <main>
@@ -72,8 +73,8 @@
           <ul class="flex justify-between gap-4 md:hidden">
             <li class="grow my-auto flex">
               <a href="index.html" class="mr-auto poppins-medium"
-                ><img src="src/img/logo.png" class="w-8"
-              /></a>
+                ><img src="src/img/logo.png" class="w-8" />
+              </a>
             </li>
             <button id="dropdownbtn">
               <img src="src/img/menu.png" class="w-8 my-auto" alt="menu icon" />
@@ -127,7 +128,7 @@
           <div class="followers-header grid poppins-bold">
             <h1 class="text-2xl font-bold col-span-2">Latest Followers</h1>
             <span class="text-gray-bold text-xs poppins-regular mt-2"
-              >7 new follwers</span
+              >3 new follwers</span
             >
           </div>
 
@@ -140,15 +141,33 @@
                   class="w-8 h-8 rounded-full my-auto"
                   alt=""
                 />
-                <p class="grow text-xs grid my-auto">
-                  <span class="text-sm poppins-bold">Ben Affleck</span>
-                  <span class="text-gray-bold">Berkeley California</span>
-                  <span class="text-gray-bold">verified</span>
-                </p>
+                <div class="grow text-xs grid my-auto">
+                  <p class="flex gap-1">
+                    <span class="text-sm poppins-bold">Ben Affleck</span>
+                    <img
+                      src="src/img/verified.png"
+                      class="w-4 my-auto"
+                      alt="verified icon"
+                    />
+                  </p>
+                  <p class="flex poppins-medium">
+                    <span>@</span>
+                    <span class="text-gray-bold">Berkeley California</span>
+                  </p>
+
+                  <p class="flex gap-1 text-gray-bold poppins-bold">
+                    <img
+                      src="src/img/followers.png"
+                      class="w-4 my-auto"
+                      alt="followers image"
+                    />
+                    <span class="my-auto">119k</span>
+                  </p>
+                </div>
                 <button
-                  class="bg-gray-faded text-xs rounded-xl px-4 py-2 my-auto"
+                  class="bg-green-100 text-green-500 text-xs rounded-2xl px-4 py-2 my-auto"
                 >
-                  Follow back
+                  <span class="poppins-bold">Follow back</span>
                 </button>
               </li>
               <li class="flex gap-4">
@@ -157,15 +176,33 @@
                   class="w-8 h-8 rounded-full my-auto"
                   alt=""
                 />
-                <p class="grow text-xs grid my-auto">
-                  <span class="text-sm poppins-bold">Jennifer Garner</span>
-                  <span class="text-gray-bold">Houston Texas</span>
-                  <span class="text-gray-bold">unverified</span>
-                </p>
+                <div class="grow text-xs grid my-auto">
+                  <p class="flex gap-1">
+                    <span class="text-sm poppins-bold">Ben Affleck</span>
+                    <img
+                      src="src/img/verified.png"
+                      class="w-4 my-auto"
+                      alt="verified icon"
+                    />
+                  </p>
+                  <p class="flex poppins-medium">
+                    <span>@</span>
+                    <span class="text-gray-bold">Berkeley California</span>
+                  </p>
+
+                  <p class="flex gap-1 text-gray-bold poppins-bold">
+                    <img
+                      src="src/img/followers.png"
+                      class="w-4 my-auto"
+                      alt="followers image"
+                    />
+                    <span class="my-auto">12.5k</span>
+                  </p>
+                </div>
                 <button
-                  class="bg-gray-faded text-xs rounded-xl px-4 py-2 my-auto"
+                  class="bg-green-100 text-green-500 text-xs rounded-2xl px-4 py-2 my-auto"
                 >
-                  Follow back
+                  <span class="poppins-bold">Follow back</span>
                 </button>
               </li>
               <li class="flex gap-4">
@@ -174,15 +211,33 @@
                   class="w-8 h-8 rounded-full my-auto"
                   alt=""
                 />
-                <p class="grow text-xs grid my-auto">
-                  <span class="text-sm poppins-bold">Jack Sparrow</span>
-                  <span class="text-gray-bold">The Caribbean Sea</span>
-                  <span class="text-gray-bold">verified</span>
-                </p>
+                <div class="grow text-xs grid my-auto">
+                  <p class="flex gap-1">
+                    <span class="text-sm poppins-bold">Tom cruise</span>
+                    <img
+                      src="src/img/verified.png"
+                      class="w-4 my-auto"
+                      alt="verified icon"
+                    />
+                  </p>
+                  <p class="flex poppins-medium">
+                    <span>@</span>
+                    <span class="text-gray-bold">Robert Downey Jr.</span>
+                  </p>
+
+                  <p class="flex gap-1 text-gray-bold poppins-bold">
+                    <img
+                      src="src/img/followers.png"
+                      class="w-4 my-auto"
+                      alt="followers image"
+                    />
+                    <span class="my-auto">1k</span>
+                  </p>
+                </div>
                 <button
-                  class="bg-gray-faded text-xs rounded-xl px-4 py-2 my-auto"
+                  class="bg-green-100 text-green-500 text-xs rounded-2xl px-4 py-2 my-auto"
                 >
-                  Follow back
+                  <span class="poppins-bold">Follow back</span>
                 </button>
               </li>
             </ul>
@@ -192,7 +247,7 @@
           <div class="post-header grid poppins-bold mt-16">
             <h1 class="text-2xl font-bold col-span-2">Latest Unfollowers</h1>
             <span class="text-gray-bold text-xs poppins-regular mt-2"
-              >17 unfollowers</span
+              >1 new unfollower(s)</span
             >
           </div>
 
@@ -205,15 +260,33 @@
                   class="w-8 h-8 rounded-full my-auto"
                   alt="person"
                 />
-                <p class="grow text-xs grid my-auto">
-                  <span class="text-sm poppins-bold">Ben Affleck</span>
-                  <span class="text-gray-bold">Berkeley California</span>
-                  <span class="text-gray-bold">verified</span>
-                </p>
+                <div class="grow text-xs grid my-auto">
+                  <p class="flex gap-1">
+                    <span class="text-sm poppins-bold">Ben Affleck</span>
+                    <img
+                      src="src/img/verified.png"
+                      class="w-4 my-auto"
+                      alt="verified icon"
+                    />
+                  </p>
+                  <p class="flex poppins-medium">
+                    <span>@</span>
+                    <span class="text-gray-bold">Berkeley California</span>
+                  </p>
+
+                  <p class="flex gap-1 text-gray-bold poppins-bold">
+                    <img
+                      src="src/img/followers.png"
+                      class="w-4 my-auto"
+                      alt="followers image"
+                    />
+                    <span class="my-auto">1250</span>
+                  </p>
+                </div>
                 <button
-                  class="bg-gray-faded text-xs rounded-xl px-4 py-2 my-auto"
+                  class="bg-red-100 text-red-500 text-xs rounded-2xl px-4 py-2 my-auto"
                 >
-                  Unfollow
+                  <span class="poppins-bold">Unfollow</span>
                 </button>
               </li>
             </ul>
