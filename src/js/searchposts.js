@@ -22,13 +22,10 @@ const findAllSearchResults = (searchWord, titleArray) => {
 const renderResults = (results) => {
   const postList = document.getElementById("postlist"); // Get the <ul> element
   postList.innerHTML = ""; // Clear existing list items
-
+  const li = document.createElement("li");
   if (results.length > 0) {
     results.forEach((result) => {
       const { index, title } = result;
-
-      // Create a new <li> element
-      const li = document.createElement("li");
       li.classList.add(
         "grid",
         "grid-cols-7",
@@ -52,11 +49,10 @@ const renderResults = (results) => {
       postList.appendChild(li);
     });
   } else {
-    // No results found, display a message (optional)
-    const noResultsMessage = document.createElement("li");
-    noResultsMessage.textContent = "No posts found.";
-    postList.appendChild(noResultsMessage);
+    li.classList.add("px-4", "py-5", "hover:bg-gray-faded");
+    li.textContent = "No posts found.";
   }
+  postList.appendChild(li);
 };
 
 let postTitlesArray = createTitleArray();
